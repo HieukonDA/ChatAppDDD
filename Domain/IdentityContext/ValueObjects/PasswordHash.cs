@@ -1,4 +1,5 @@
 ﻿using Domain.SeedWork;
+using Domain.SeedWork.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,28 +22,21 @@ namespace Domain.IdentityContext.ValueObjects
         public static PasswordHash Create(string rawPassword)
         {
             Validate(rawPassword);
-            string hashed = HashPassword(rawPassword);
-            return new PasswordHash(hashed);
+            return new PasswordHash(rawPassword);
         }
 
         private static void Validate(string password)
         {
             if (password.Length < 8)
-                throw new Exception("Password quá ngắn");
+                throw InvalidDomainException.Entity("Password","Password too short");
             if (!password.Any(char.IsUpper))
-                throw new Exception("Cần ít nhất 1 chữ hoa");
+                throw InvalidDomainException.Entity("Password","Need least 1 upper character");
             if (!password.Any(char.IsLower))
-                throw new Exception("Cần ít nhất 1 chữ thường");
+                throw InvalidDomainException.Entity("Password","Need least 1 lower character");
             if (!password.Any(char.IsDigit))
-                throw new Exception("Cần ít nhất 1 chữ số");
+                throw InvalidDomainException.Entity("Password","Need least 1 digit");
             if (!password.Any(c => "!@#$%^&*()".Contains(c)))
-                throw new Exception("Cần ít nhất 1 ký tự đặc biệt");
-        }
-
-        private static string HashPassword(string password)
-        {
-            // Hash logic, ví dụ bcrypt hoặc SHA256
-            return BCrypt.Net.BCrypt.HashPassword(password);
+                throw InvalidDomainException.Entity("Password","need least 1 special character");
         }
 
         public override string ToString()

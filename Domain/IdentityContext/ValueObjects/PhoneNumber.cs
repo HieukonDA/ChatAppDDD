@@ -1,4 +1,5 @@
 ﻿using Domain.SeedWork;
+using Domain.SeedWork.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace Domain.IdentityContext.ValueObjects
         {
             // Simple validation example
             if (string.IsNullOrWhiteSpace(phoneNumber))
-                throw new ArgumentException("Value is required");
+                throw RequireDomainException.Field("PhoneNumber");
             if (!phoneNumber.All(char.IsDigit) || phoneNumber.Length < 9 || phoneNumber.Length > 12)
-                throw new ArgumentException("Value is invalid");
+                throw InvalidDomainException.Entity("PhoneNumber", "The phone number format is invalid.");
             Value = phoneNumber;
         }
 

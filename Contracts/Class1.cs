@@ -1,4 +1,4 @@
-﻿namespace Infrastructure
+﻿namespace Contracts
 {
     public class Class1
     {

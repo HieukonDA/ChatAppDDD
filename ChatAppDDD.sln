@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36623.8 d17.14
+VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{5950FED9-4433-4119-B734-22AEA35C26CD}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{F394FAE0-52B5-416D-BAE9-150F746B1EE2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{F9EF473C-F465-448D-A9FD-4AB9E18C0451}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{17E63928-30AA-49C0-81BA-EE454D2E8CB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,10 @@ Global
 		{F9EF473C-F465-448D-A9FD-4AB9E18C0451}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9EF473C-F465-448D-A9FD-4AB9E18C0451}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9EF473C-F465-448D-A9FD-4AB9E18C0451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17E63928-30AA-49C0-81BA-EE454D2E8CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E63928-30AA-49C0-81BA-EE454D2E8CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E63928-30AA-49C0-81BA-EE454D2E8CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E63928-30AA-49C0-81BA-EE454D2E8CB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

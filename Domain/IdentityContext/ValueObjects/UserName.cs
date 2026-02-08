@@ -1,4 +1,5 @@
 ﻿using Domain.SeedWork;
+using Domain.SeedWork.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,9 @@ namespace Domain.IdentityContext.ValueObjects
         private UserName(string userName)
         {
             if (string.IsNullOrWhiteSpace(userName))
-                throw new ArgumentException("Value is required");
+                throw RequireDomainException.Field("UserName");
             if (userName.Length < 3 || userName.Length > 20)
-                throw new ArgumentException("Value must be between 3 and 20 characters");
+                throw InvalidDomainException.Entity("UserName", "The username must be between 3 and 20 characters long.");
             Value = userName.Trim();
         }
 

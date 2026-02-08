@@ -1,4 +1,5 @@
 ﻿using Domain.SeedWork;
+using Domain.SeedWork.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +17,10 @@ namespace Domain.IdentityContext.ValueObjects
         private AvatarUrl(string url)
         {
             if (string.IsNullOrWhiteSpace(url))
-                throw new ArgumentException("Value is required");
+                throw RequireDomainException.Field("AvatarUrl");
             // Simple URL validation
             if (!Uri.IsWellFormedUriString(url, UriKind.Absolute))
-                throw new ArgumentException("Value is invalid");
+                throw InvalidDomainException.Entity("AvatarUrl", "The URL format is invalid.");
             Value = url.Trim();
         }
 
